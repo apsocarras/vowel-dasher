@@ -1,5 +1,3 @@
-// UI Logic 
-
 // Business Logic
 
 function vowelDasher(sentence) {
@@ -17,3 +15,24 @@ function vowelDasher(sentence) {
 
   return dashedSentence.join("");
 }
+
+// UI Logic 
+
+window.addEventListener("load", function() {
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const sentenceInput = document.getElementById("sentenceInput").value;
+    const outputDiv = document.querySelector("div");
+    const outputParagraph = document.createElement("p");
+
+    outputDiv.append(outputParagraph);
+    outputParagraph.append(vowelDasher(sentenceInput));
+
+  });
+
+});
+
+
